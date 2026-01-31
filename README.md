@@ -29,12 +29,7 @@ Some baseflow separation methods (HYSEP family: fixed/sliding/local minima) requ
 
 ## Monthly BFI definition
 
-For each station and method, daily baseflow \(Q_b(t)\) is estimated first. Monthly BFI is then computed as:
-
-\[
-\mathrm{BFI}_{m} = \frac{\sum_{t \in m} Q_b(t)}{\sum_{t \in m} Q(t)}
-\]
-
+For each station and method, daily baseflow \(Q_b(t)\) is estimated first. 
 Key implementation details:
 - Daily negative/invalid discharge values are treated as missing.
 - Monthly BFI is computed only if a month has at least `min_days_per_month` valid daily observations (default: **15 days**).
