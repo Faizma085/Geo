@@ -1,40 +1,51 @@
- Monthly Baseflow Index (BFI) — 9 Methods (No Drainage Area Required)
+# Monthly Baseflow Index (BFI) — Six-Method Ensemble
 
-This repository computes **monthly Baseflow Index (BFI)** for multiple gauging stations using **nine** widely used baseflow-separation methods implemented in the `baseflow` Python package.
+This repository computes **monthly Baseflow Index (BFI)** from daily streamflow using six hydrograph-separation methods:
 
-It is designed for **daily streamflow time series in “wide CSV” format** (one `time` column + one column per station), and produces:
+* Lyne-Hollick
+* UKIH
+* HYSEP fixed interval
+* HYSEP sliding interval
+* HYSEP local minimum
+* Eckhardt
 
-- **Monthly BFI time series** for each station and method  
-- A **combined long-format** monthly BFI table for multi-station analysis  
-- **Comparison plots** (methods vs time; and mean seasonal cycle)
+The input should be a wide CSV containing one `time` column and one column per gauging station.
 
----
+## Method
 
-## Why 9 methods?
+Daily baseflow is estimated independently using all six methods. Monthly values are retained only when at least **90% of expected daily observations** are available.
 
-Some baseflow separation methods (HYSEP family: fixed/sliding/local minima) require **drainage area** to define the separation window length. If you do **not** have drainage area consistently for all stations, this repo uses the **9 methods that do not require drainage area**:
+The monthly ensemble baseflow is calculated as the **median of the valid method-specific monthly baseflow estimates**, with at least **4 of 6 methods** required.
 
-**Methods included (9):**
-- `UKIH`
-- `LH` (Lyne–Hollick filter)
-- `Chapman`
-- `CM`
-- `Boughton`
-- `Furey`
-- `Eckhardt`
-- `EWMA`
-- `Willems`
+## Input example
 
----
+```text
+time,St1,St2,St3
+2004-01-01,12.5,8.4,15.1
+2004-01-02,11.8,8.1,14.7
+```
 
-## Monthly BFI definition
+## Run
 
-For each station and method, daily baseflow \(Q_b(t)\) is estimated first. 
-Key implementation details:
-- Daily negative/invalid discharge values are treated as missing.
-- Monthly BFI is computed only if a month has at least `min_days_per_month` valid daily observations (default: **15 days**).
-- Monthly BFI is clipped to \([0, 1]\) after aggregation for stability.
+```bash
+python bfi.py "Sample.csv" --output-dir results
+```
 
----
+With drainage-area metadata:
 
+```bash
+python bfi.py "Sample.csv" --area-csv station_area.csv --output-dir results
+```
 
+## Outputs
+
+```text
+six_method_BFI_summary.csv
+six_method_monthly_ensemble.csv
+```
+
+## Requirements
+
+```bash
+pip install numpy pandas
+```
