@@ -28,20 +28,14 @@ time,St1,St2,St3
 ## Run
 
 ```bash
-python bfi.py "Sample.csv" --output-dir results
+python bfi_6.py "Sample.csv" --output-dir results
 ```
 
 With drainage-area metadata:
 
 ```bash
-python bfi.py "Sample.csv" --area-csv station_area.csv --output-dir results
+python bfi_6.py "Sample.csv" --area-csv station_area.csv --output-dir results
 ```
-
-## Outputs
-
-```text
-six_method_BFI_summary.csv
-six_method_monthly_ensemble.csv
 ```
 
 ## Requirements
