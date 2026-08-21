@@ -63,4 +63,8 @@ The code in this repository documents the main processing and analysis procedure
 
 For questions about data access, file organization, or reproduction of the analyses, please contact the **corresponding author** using the email address provided in the manuscript.
 
+
+## Citations
+Faiz et al. will be available upon acceptance for publication. It is advised to cite the paper if the method or data has been used ...
+
 Please note that requests for assistance do not replace the access conditions established by the original data providers.
