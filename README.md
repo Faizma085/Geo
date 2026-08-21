@@ -45,7 +45,7 @@ pip install numpy pandas
 ```
 # Data and Code Availability
 
-This repository contains the basic code associated with the manuscript.
+This repository contains the basic sample code associated with the manuscript.
 
 ## Data availability
 
