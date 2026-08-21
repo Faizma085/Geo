@@ -1,6 +1,6 @@
-# Monthly Baseflow Index (BFI) — Six-Method Ensemble
+# BFI-Six-Method Ensemble
 
-This repository computes **monthly Baseflow Index (BFI)** from daily streamflow using six hydrograph-separation methods:
+This repository computes **monthly BFI** from daily streamflow using six hydrograph-separation methods:
 
 * Lyne-Hollick
 * UKIH
