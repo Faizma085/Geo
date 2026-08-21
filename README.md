@@ -43,3 +43,24 @@ python bfi_6.py "Sample.csv" --area-csv station_area.csv --output-dir results
 ```bash
 pip install numpy pandas
 ```
+# Data and Code Availability
+
+This repository contains the basic code associated with the manuscript.
+
+## Data availability
+
+The original datasets used in this study are not redistributed through this GitHub repository because several datasets are large and/or are subject to the distribution conditions of their original providers.
+
+All datasets used in the analysis are publicly available from their original sources. Dataset names, references, access links, and other relevant information are provided in the **Supplementary Information** accompanying the manuscript. These links can be used to download the original data directly from the respective data providers.
+
+Where applicable, users should follow the licence, citation, and terms-of-use requirements specified by each original data provider.
+
+## Reproducibility
+
+The code in this repository documents the main processing and analysis procedures used in the study. Reproduction of the analyses requires downloading the relevant datasets from the sources listed in the Supplementary Information and organizing them according to the input structure expected by the scripts.
+
+## Contact
+
+For questions about data access, file organization, or reproduction of the analyses, please contact the **corresponding author** using the email address provided in the manuscript.
+
+Please note that requests for assistance do not replace the access conditions established by the original data providers.
